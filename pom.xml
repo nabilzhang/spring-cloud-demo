@@ -15,6 +15,7 @@
         <module>spring-cloud-eureka-server</module>
         <module>spring-cloud-eureka-client1</module>
         <module>spring-cloud-eureka-client2</module>
+        <module>spring-cloud-admin</module>
     </modules>
 
     <parent>
@@ -28,6 +29,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <spring-boot-admin>1.5.4</spring-boot-admin>
     </properties>
 
     <dependencyManagement>
@@ -39,10 +41,26 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server</artifactId>
+                <version>${spring-boot-admin}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server-ui</artifactId>
+                <version>${spring-boot-admin}</version>
+            </dependency>
             <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-client</artifactId>
-                <version>1.5.0</version>
+                <version>${spring-boot-admin}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-server-ui-login</artifactId>
+                <version>${spring-boot-admin}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
