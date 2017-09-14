@@ -13,9 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author nabilzhang
  * @date 2017-09-14
  */
-@FeignClient("client2")
+@FeignClient(value = "client2", fallback = Client2ServiceFallback.class)
 public interface Client2Service {
 
     @RequestMapping(method = RequestMethod.GET, value = "/hello")
     String hello(@RequestParam(value = "param1") String param1);
+
 }
