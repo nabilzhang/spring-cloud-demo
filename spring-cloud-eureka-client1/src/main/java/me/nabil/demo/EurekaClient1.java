@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,18 +26,18 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableEurekaClient
 @RestController
 @EnableFeignClients
-@EnableCircuitBreaker
+@EnableHystrix
 public class EurekaClient1 {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EurekaClient1.class);
 
     @Autowired
-    private Client2Service client2Service;
+    private Client2Service client2;
 
     @RequestMapping("/")
     public String home() {
         LOGGER.info("excute home");
-        return "Hello world" + client2Service.hello("client1");
+        return "Hello world " + client2.hello("client1");
     }
 
     public static void main(String[] args) {
