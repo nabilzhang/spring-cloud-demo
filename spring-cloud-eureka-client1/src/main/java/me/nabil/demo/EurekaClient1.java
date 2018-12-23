@@ -40,6 +40,11 @@ public class EurekaClient1 {
         return "Hello world" + client2Service.hello("client1");
     }
 
+    @RequestMapping("/hystrix.stream")
+    public String hystrix() {
+        return "redirect 301:/actuator/hystrix.stream";
+    }
+
     public static void main(String[] args) {
         new SpringApplicationBuilder(EurekaClient1.class).web(WebApplicationType.SERVLET).run(args);
     }
