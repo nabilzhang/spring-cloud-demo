@@ -7,10 +7,21 @@ spring:
     admin:
       client:
         url: "http://127.0.0.1:8888"
+        instance:
+          prefer-ip: true
 eureka:
   instance:
     prefer-ip-address: true
     status-page-url-path: /actuator/info
   client:
     register-with-eureka: false
-    fetch-registry: false
+    fetch-registry: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

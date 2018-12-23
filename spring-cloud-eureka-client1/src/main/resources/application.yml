@@ -7,6 +7,8 @@ spring:
     admin:
       client:
         url: "http://127.0.0.1:8888"
+        instance:
+          prefer-ip: true
 
 eureka:
   instance:
@@ -14,5 +16,20 @@ eureka:
     status-page-url-path: /actuator/info
     prefer-ip-address: true
   client:
+    registryFetchIntervalSeconds: 5
     service-url:
       defaultZone: http://127.0.0.1:8761/eureka/
+
+#开启hystrix功能
+feign:
+  hystrix:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
