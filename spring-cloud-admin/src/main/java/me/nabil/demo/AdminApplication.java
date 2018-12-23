@@ -19,10 +19,10 @@ import org.springframework.context.annotation.Configuration;
 @EnableAutoConfiguration
 @EnableDiscoveryClient
 @EnableAdminServer
-public class ServerApplication  {
+public class AdminApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServerApplication.class, args);
+        SpringApplication.run(AdminApplication.class, args);
     }
 
 

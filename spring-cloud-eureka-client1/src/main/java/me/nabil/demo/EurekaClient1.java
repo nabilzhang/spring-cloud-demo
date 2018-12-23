@@ -35,6 +35,7 @@ public class EurekaClient1 {
 
     @RequestMapping("/")
     public String home() {
+        LOGGER.info("excute home");
         return "Hello world" + client2Service.hello("client1");
     }
 
