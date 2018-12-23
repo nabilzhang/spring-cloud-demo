@@ -1,0 +1,17 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: client2
+  boot:
+    admin:
+      client:
+        url: "http://127.0.0.1:8888"
+eureka:
+  instance:
+    health-check-url-path: /actuator/health
+    status-page-url-path: /actuator/info
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/

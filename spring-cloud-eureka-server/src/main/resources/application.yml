@@ -1,0 +1,16 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eureka-server
+  boot:
+    admin:
+      client:
+        url: "http://127.0.0.1:8888"
+eureka:
+  instance:
+    prefer-ip-address: true
+    status-page-url-path: /actuator/info
+  client:
+    register-with-eureka: false
+    fetch-registry: false

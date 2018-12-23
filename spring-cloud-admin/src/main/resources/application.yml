@@ -1,0 +1,13 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: spring-boot-admin
+eureka:
+  instance:
+    health-check-url-path: /actuator/health
+    status-page-url-path: /actuator/info
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
