@@ -1,0 +1,30 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: zuul
+  boot:
+    admin:
+      client:
+        url: "http://127.0.0.1:8888"
+        instance:
+          prefer-ip: true
+
+zuul:
+  routes:
+    client1:
+      path: /client1/**
+      serviceId: client1
+    client2:
+      path: /client2/**
+      serviceId: client2
+  prefix: /v1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

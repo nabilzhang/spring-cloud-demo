@@ -13,7 +13,7 @@ import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboar
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * client1
+ * HystrixDashBoard
  *
  * @author nabilzhang
  * @date 2017-09-14
